@@ -1,11 +1,11 @@
+from note import Note
+
 class Notebook():
 
     def __init__(self):
-        self.text = ""
+        self.notebook = []
 
-
-    def set_text(self, text):
-        self.text = text
-
-    def get_text(self):
-        return self.text
+    def add(self, text):
+        self.note = Note()
+        self.note.set_text(text)
+        self.notebook.append(self.note)
