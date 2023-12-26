@@ -132,3 +132,5 @@ scroll_bar = Scrollbar(ui, orient="vertical", command=table.yview)
 scroll_bar.grid(column=1, row=0, ipady=85, sticky="ns")
 
 table["yscrollcommand"] = scroll_bar.set
+
+load_notes()
