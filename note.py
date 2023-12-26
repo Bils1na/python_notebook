@@ -1,6 +1,7 @@
-class Note():
+class Note:
 
     def __init__(self):
+        self.title = ""
         self.text = ""
 
     def set_text(self, text):
@@ -8,3 +9,9 @@ class Note():
 
     def get_text(self):
         return self.text
+
+    def set_title(self, text):
+        self.title = text
+
+    def get_title(self):
+        return self.title
