@@ -9,23 +9,23 @@ class UI:
     def __init__(self):
         self.ui = Tk()
         self.ui.title("Notebook")
-        self.ui.geometry("554x512")
+        self.ui.geometry("541x512")
         self.ui.resizable(False, False)
 
         self.btns = LabelFrame(self.ui, borderwidth=0)
         self.btns.grid(column=2, row=0)
-        self.btn1 = Button(self.btns, text="Add note", command=self.add_note_window)
+        self.btn1 = Button(self.btns, text="Create", command=self.add_note_window)
         self.btn2 = Button(self.btns, text="Search by date", command=self.search_by_date_window)
         self.btn3 = Button(self.btns, text="All notes", command=self.display_notebook)
         self.btn4 = Button(self.btns, text="Save", command=self.save_notes)
         self.btn5 = Button(self.btns, text="Load", command=self.load_notes)
         self.btn6 = Button(self.btns, text="Delete", command=self.delete_note)
-        self.btn1.grid(column=0, row=0, ipadx=30, ipady=10, sticky="we")
-        self.btn6.grid(column=0, row=1, ipadx=30, ipady=10, sticky="we")
-        self.btn2.grid(column=0, row=2, ipadx=30, ipady=10, sticky="we")
-        self.btn3.grid(column=0, row=3, ipadx=30, ipady=10, sticky="we")
-        self.btn4.grid(column=0, row=4, ipadx=30, ipady=10, sticky="we")
-        self.btn5.grid(column=0, row=5, ipadx=30, ipady=10, sticky="we")
+        self.btn1.grid(column=0, row=0, ipadx=30, ipady=10, sticky="we", pady=15, padx=(3, 0))
+        self.btn6.grid(column=0, row=1, ipadx=30, ipady=10, sticky="we", pady=15, padx=(3, 0))
+        self.btn2.grid(column=0, row=2, ipadx=30, ipady=10, sticky="we", pady=15, padx=(3, 0))
+        self.btn3.grid(column=0, row=3, ipadx=30, ipady=10, sticky="we", pady=15, padx=(3, 0))
+        self.btn4.grid(column=0, row=4, ipadx=30, ipady=10, sticky="we", pady=15, padx=(3, 0))
+        self.btn5.grid(column=0, row=5, ipadx=30, ipady=10, sticky="we", pady=15, padx=(3, 0))
 
         self.columns = ("id", "name", "date")
         self.table = ttk.Treeview(columns=self.columns, show="headings", height=24)
@@ -56,11 +56,11 @@ class UI:
             for note in notebook.notebook:
                 if date == note.get_date()[0].split("-")[0]:
                     self.table.insert("", END, values=(note.get_id(), note.get_title(),
-                                                  note.get_date(), note.get_text()))
+                                                       note.get_date(), note.get_text()))
         else:
             for note in notebook.notebook:
                 self.table.insert("", END, values=(note.get_id(), note.get_title(),
-                                              note.get_date(), note.get_text()))
+                                                   note.get_date(), note.get_text()))
 
     def dismiss(self, window):
         window.grab_release()
@@ -143,8 +143,8 @@ class UI:
             btns = LabelFrame(ui_note, borderwidth=0, bg="white")
             btns.grid(column=0, row=1, pady=(30, 0))
             create_btn = Button(btns, text="Edit", command=lambda: self.edit_note_window(self.get_note_data(event)[3],
-                                                                                    self.get_note_data(event)[1],
-                                                                                    ui_note))
+                                                                                         self.get_note_data(event)[1],
+                                                                                         ui_note))
             cancel_btn = Button(btns, text="Cancel", command=lambda: self.dismiss(ui_note))
             create_btn.grid(column=0, row=0, ipadx=10, ipady=10, padx=(0, 15))
             cancel_btn.grid(column=1, row=0, ipadx=10, ipady=10)
