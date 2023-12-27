@@ -54,7 +54,8 @@ class UI:
     def fill_table(self, date):
         if date:
             for note in notebook.notebook:
-                if date == note.get_date()[0].split("-")[0]:
+                if (date == note.get_date()[0].split("-")[0] or
+                        note.get_date()[0].split("-")[0].__contains__(date)):
                     self.table.insert("", END, values=(note.get_id(), note.get_title(),
                                                        note.get_date(), note.get_text()))
         else:
