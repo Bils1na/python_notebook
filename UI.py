@@ -72,24 +72,24 @@ def add_note_window():
     ui_adding.resizable(False, False)
 
     title_group = LabelFrame(ui_adding, borderwidth=0)
-    title_group.grid(column=0, row=0, sticky="we", padx=[2, 0], pady=[2, 15])
+    title_group.grid(column=0, row=0, sticky="we", padx=(2, 0), pady=(2, 15))
     adding_title = Label(title_group, text="Введите название заметки: ")
     adding_title.grid(column=0, row=0)
     title_input = Entry(title_group, width=64)
-    title_input.grid(column=2, row=0, padx=[0, 1])
+    title_input.grid(column=2, row=0, padx=(0, 1))
 
     text_group = LabelFrame(ui_adding, borderwidth=0)
-    text_group.grid(column=0, row=1, sticky="we", padx=[2, 0])
+    text_group.grid(column=0, row=1, sticky="we", padx=(2, 0))
     adding_text = Label(text_group, text="Введите текст заметки: ")
     adding_text.grid(column=0, row=1, sticky="we")
     text_input = Text(text_group, width=67, height=20)
-    text_input.grid(column=0, row=2, sticky="we", padx=[1, 0])
+    text_input.grid(column=0, row=2, sticky="we", padx=(1, 0))
 
     btns = LabelFrame(ui_adding, borderwidth=0)
-    btns.grid(column=0, row=3, pady=[30, 0])
+    btns.grid(column=0, row=3, pady=(30, 0))
     create_btn = Button(btns, text="Create", command=lambda: create_note(title_input, text_input, ui_adding))
     cancel_btn = Button(btns, text="Cancel", command=lambda: dismiss(ui_adding))
-    create_btn.grid(column=0, row=3, ipadx=10, ipady=10, padx=[0, 15])
+    create_btn.grid(column=0, row=3, ipadx=10, ipady=10, padx=(0, 15))
     cancel_btn.grid(column=1, row=3, ipadx=10, ipady=10)
 
     ui_adding.grab_set()
@@ -111,12 +111,12 @@ def open_note_window(event):
         note_text.grid(column=0, row=1, pady=30)
 
         btns = LabelFrame(ui_note, borderwidth=0, bg="white")
-        btns.grid(column=0, row=1, pady=[30, 0])
+        btns.grid(column=0, row=1, pady=(30, 0))
         create_btn = Button(btns, text="Edit", command=lambda: edit_note_window(get_note_data(event)[3],
                                                                                 get_note_data(event)[1],
                                                                                 ui_note))
         cancel_btn = Button(btns, text="Cancel", command=lambda: dismiss(ui_note))
-        create_btn.grid(column=0, row=0, ipadx=10, ipady=10, padx=[0, 15])
+        create_btn.grid(column=0, row=0, ipadx=10, ipady=10, padx=(0, 15))
         cancel_btn.grid(column=1, row=0, ipadx=10, ipady=10)
 
         ui_note.grab_set()
@@ -134,26 +134,26 @@ def edit_note_window(text, title, ui_note):
     ui_edit.resizable(False, False)
 
     title_group = LabelFrame(ui_edit, borderwidth=0)
-    title_group.grid(column=0, row=0, sticky="we", padx=[2, 0], pady=[2, 15])
+    title_group.grid(column=0, row=0, sticky="we", padx=(2, 0), pady=(2, 15))
     adding_title = Label(title_group, text="Изменить название заметки: ")
     adding_title.grid(column=0, row=0)
     title_input = Entry(title_group, width=64)
     title_input.insert(END, title)
-    title_input.grid(column=2, row=0, padx=[0, 1])
+    title_input.grid(column=2, row=0, padx=(0, 1))
 
     text_group = LabelFrame(ui_edit, borderwidth=0)
-    text_group.grid(column=0, row=1, sticky="we", padx=[2, 0])
+    text_group.grid(column=0, row=1, sticky="we", padx=(2, 0))
     adding_text = Label(text_group, text="Редактировать текст заметки: ")
     adding_text.grid(column=0, row=1, sticky="we")
     text_input = Text(text_group, width=67, height=20)
     text_input.insert(END, text)
-    text_input.grid(column=0, row=2, sticky="we", padx=[1, 0])
+    text_input.grid(column=0, row=2, sticky="we", padx=(1, 0))
 
     btns = LabelFrame(ui_edit, borderwidth=0)
-    btns.grid(column=0, row=3, pady=[30, 0])
+    btns.grid(column=0, row=3, pady=(30, 0))
     edit_btn = Button(btns, text="Edit", command=lambda: edit_note(title_input, text_input, ui_edit))
     cancel_btn = Button(btns, text="Cancel", command=lambda: dismiss(ui_edit))
-    edit_btn.grid(column=0, row=3, ipadx=10, ipady=10, padx=[0, 15])
+    edit_btn.grid(column=0, row=3, ipadx=10, ipady=10, padx=(0, 15))
     cancel_btn.grid(column=1, row=3, ipadx=10, ipady=10)
 
     ui_edit.grab_set()
@@ -176,7 +176,7 @@ def search_by_date_window():
     btns.grid(column=0, row=1, pady=10)
     search_btn = Button(btns, text="Search", command=lambda: display_notebook_by_date(search_input.get(), ui_search))
     cancel_btn = Button(btns, text="Cancel", command=lambda: dismiss(ui_search))
-    search_btn.grid(column=0, row=3, ipadx=10, ipady=10, padx=[0, 15])
+    search_btn.grid(column=0, row=3, ipadx=10, ipady=10, padx=(0, 15))
     cancel_btn.grid(column=1, row=3, ipadx=10, ipady=10)
 
     ui_search.grab_set()
