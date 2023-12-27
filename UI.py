@@ -229,7 +229,7 @@ btn5.grid(column=0, row=5, ipadx=30, ipady=10, sticky="we")
 
 columns = ("id", "name", "date")
 table = ttk.Treeview(columns=columns, show="headings", height=24)
-table.grid(column=0, row=0, sticky="ns", ipadx=15, padx=[5, 0])
+table.grid(column=0, row=0, sticky="ns", ipadx=15, padx=(5, 0))
 table.heading("id", text="№")
 table.heading("name", text="Note")
 table.heading("date", text="Date")
