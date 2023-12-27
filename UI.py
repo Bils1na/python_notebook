@@ -4,7 +4,6 @@ from notebook_handler import notebook, data as notebook_data
 import notebook_handler
 
 
-
 class UI:
 
     def __init__(self):
@@ -27,8 +26,6 @@ class UI:
         self.btn3.grid(column=0, row=3, ipadx=30, ipady=10, sticky="we")
         self.btn4.grid(column=0, row=4, ipadx=30, ipady=10, sticky="we")
         self.btn5.grid(column=0, row=5, ipadx=30, ipady=10, sticky="we")
-
-
 
         self.columns = ("id", "name", "date")
         self.table = ttk.Treeview(columns=self.columns, show="headings", height=24)
