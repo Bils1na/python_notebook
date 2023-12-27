@@ -98,7 +98,7 @@ def add_note_window():
 def open_note_window(event):
     try:
         ui_note = Toplevel()
-        ui_note.geometry("554x512")
+        ui_note.geometry("559x500")
         ui_note.protocol("WM_DELETE_WINDOW", lambda: dismiss(ui_note))
         ui_note.title(f"Заметка {get_note_data(event)[1]}")
         ui_note.resizable(False, False)

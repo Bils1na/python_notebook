@@ -7,7 +7,7 @@ def download_data_base():
     notebook.notebook.clear()
     json_data = file_handler.pull_db()
     for element in json_data.items():
-        note_id += 1
+        note_id = int(element[0])
         notebook.add(element[1][0], element[1][2], element[0], element[1][1])
 
 
